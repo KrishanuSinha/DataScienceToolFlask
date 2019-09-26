@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+<style> 
+#apDiv1 {	
+	left: 100;
+	top: 150;
+	overflow-x: auto;
+} 
+
+.table1 {       
+  position: absolute;
+  font-size: 100%;
+  background: rgb(236, 240, 204);
+  display: table;
+  border: 1px dotted blue; 
+  overflow-x:auto;
+  padding: 10px;
+}
+
+</style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+        <div id="brandname">
+            ML App
+        </div>
+        <h2>CLAIMS MACHINE LEARNING APPLICATION</h2>
+
+    </div>
+    </header>
+    <p style="color:blue;font-size:20;text-align: center;"><b>Displaying Dataframe</b></p>
+    <div class="table1" id="apDiv1">
+    
+                {% block body %}
+                {{ data|safe }}
+                {% endblock %} 	
+   </div>    
+     
+</body>
+</html>
